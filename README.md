@@ -24,3 +24,6 @@ Frogger is a classic arcade game where the player controls a frog trying to cros
 Frogger Application in FPGA DE1-SoC Board: Crossy Road 
 
 For our final project, we have impleemnted a version of Frogger in the application of Crossy Road. 
+
+![IMG_0096](https://github.com/user-attachments/assets/c24566a9-0672-45b6-94a8-e3f80fc35201)
+
