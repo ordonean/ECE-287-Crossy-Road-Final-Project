@@ -1,8 +1,10 @@
+/////////////////////////////////////////////////////////////////////////////////////////////
 // this module deals with all moving obstacles (i.e. cars, trains, moving railroad crossing, etc)
 
- // This module is for moving obstacles (e.g., a train)
+// This module is for moving obstacles (e.g., a train)
 // It tells you if a given grid cell (blocked_x, blocked_y) is currently
 // occupied by a moving obstacle.
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 module moving_obstacles #(
     parameter GRID_WIDTH   = 16,  // columns
@@ -69,3 +71,4 @@ module moving_obstacles #(
     end
 
 endmodule
+
