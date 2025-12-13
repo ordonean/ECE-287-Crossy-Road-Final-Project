@@ -1,3 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+Decodes PS/2 scan codes into stable key-press signals.
+This module maps W,A,S,D and arrow keys to movement controls for both players.
+It handles make and break codes to track key state correctly.
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 module keyboard_decoder (
     input        clk,
     input        rst_n,           // active-low reset
@@ -64,4 +73,5 @@ module keyboard_decoder (
         end
     end
 endmodule
+
 
