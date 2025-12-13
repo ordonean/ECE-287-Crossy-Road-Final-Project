@@ -70,16 +70,18 @@ Figure 3. Full Game Display w/ Images
 
 STEPS TO FOLLOW: as an example guide on how to do this method, the following will be a step-by-step breakdown on how to display image for sprite2 within crossy_road project. 
 1. Choose an Image to represent [sprite2] with online search. 
-2. Save as a .png image.
-3. Go to Claude by Anthropic and upload prompt "create a png to mif converter to upload mif files to quartus". (see Figure 4)
+2. Save as a .png image
+3. Go to Claude by Anthropic and upload prompt "create a png to mif converter to upload mif files to quartus" (see Figure 4)
 <img width="2313" height="1073" alt="Image" src="https://github.com/user-attachments/assets/e249ac26-9167-4b38-b2b5-86f7579f3f65" /> 
 Figure 4. Prompting Claude by Anthropic to create a mif converter                 
-4. Set paratemeters for creating mif file from converter.
+4. Set paratemeters for creating mif file from converter & download
     Note: This means knowing how big (bit wise) your color output is. In this project, we used a 24 bit output, so 24-bit color depth was selected.
     Note: You must know your pixel range. Ex: If Sprite is represented by 1 grid square at a time and each grid = 40 x 40 pixels, select correct choice. Else, change to applicable sizing 
 <img width="1096" height="377" alt="Image" src="https://github.com/user-attachments/assets/fe25d004-01f3-4e87-a739-8537d9e23a2a" /> 
 Figure 5. Selecting parameters within mif file converter 
-
+5. Upload all .mif files to a common repository within pre-established project folder.
+         Ex: ECE287 -> final project -> crossy_road (top module folder) -> .mif files (mif files reside here!!)
+         Note: As a housekeeping item before advancing, ensure your mif files do not have foregin signage such as parenthesis. Quartus does not register this as known so whenever you compile it will shoot a warning. Ex: if your mif file = "sprite1(1).mif", change mif file name to "sprite1.mif". 
 
 
 
