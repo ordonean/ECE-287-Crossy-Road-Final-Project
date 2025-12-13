@@ -23,7 +23,7 @@ Frogger is a classic arcade game where the player controls a frog trying to cros
 
 Frogger Application in FPGA DE1-SoC Board: Crossy Road 
 
-For our final project, we have impleemnted a version of Frogger in the application of Crossy Road. 
+For our final project, we have impleemnted a version of Frogger in the form of Crossy Road. This was done by considering a couple of things, specifically, the Finite State Machine used for this project. 
 
 ...
 
@@ -31,4 +31,27 @@ For our final project, we have impleemnted a version of Frogger in the applicati
 Here is our FSM diagram of our simple FSM states in the game:
 
 ![IMG_0096](https://github.com/user-attachments/assets/c24566a9-0672-45b6-94a8-e3f80fc35201)
-Figure 1. FSM Diagram
+                               Figure 1. FSM Diagram
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Display Logic & Instantiating a ROM IP Core via IP Catalog 
+
+When dealing with the Display Logic, there were two different ways this was addressed by our team:
+
+Once the full logic was implemented throughout the project, the game display looked like Figure 2, a simply solid color for where said sprite or object logic was happening. 
+
+
+
