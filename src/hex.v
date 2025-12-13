@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////
 /*
-Convert the 4 bit signals to display on HEXs
-
+Seven-segment display driver for debugging
+Convert the 4 bit signals to HEX display output
 */
 /////////////////////////////////////////////////////////////
 
@@ -31,5 +31,6 @@ always @(*) begin
 	 default: out = ~7'b1111111; // all segments off (active-high)
   endcase
 end
+
 
 endmodule
