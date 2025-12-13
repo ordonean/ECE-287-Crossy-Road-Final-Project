@@ -1,4 +1,14 @@
-////////////////////////////  crossy_road  //////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+
+TOP-level module that integrates the entire game system.
+Wires together VGA output, PS2 keyboard input, game logic, obstacles, and debugging outputs.
+It manages global clock/reset, player state, and connects all submodules.
+It also implements our logic for movements, instead of having a separate movement module.
+
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 module crossy_road(
     input        CLOCK_50, 
@@ -1031,3 +1041,4 @@ keyboard_decoder kb (
 
 
 endmodule
+
