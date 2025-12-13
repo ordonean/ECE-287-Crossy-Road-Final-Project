@@ -86,12 +86,9 @@ Figure 4. Prompting Claude by Anthropic to create a mif converter
 Figure 5. Selecting parameters within mif file converter 
 
 5. Upload all .mif files to a common repository within pre-established project folder.
-
-         Ex: ECE287 -> final project -> crossy_road (top module folder) -> .mif files (mif files reside here!!)
-
-         Note: As a housekeeping item before advancing, ensure your mif files do not have foregin signage such as parenthesis. Quartus does not register this as known so whenever you compile it will shoot a warning.
-
-               Ex: if your mif file = "sprite1(1).mif", change mif file name to "sprite1.mif".
+     Ex: ECE287 -> final project -> crossy_road (top module folder) -> .mif files (mif files reside here!!)
+     Note: As a housekeeping item before advancing, ensure your mif files do not have foregin signage such as parenthesis. Quartus does not register this as known so whenever you compile it will shoot a warning.
+       Ex: if your mif file = "sprite1(1).mif", change mif file name to "sprite1.mif".
 
 7. ROM cretation using Dr. Eric Schwartz's "Quartus ROM Creation Tutorial" up to page 3 out of 4
          Note: Find this tutorial under the tools section fo the github; only follow up until page 3 out of 4, where last action is to "select yes".
