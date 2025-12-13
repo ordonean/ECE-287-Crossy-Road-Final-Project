@@ -51,10 +51,19 @@ Here is our FSM diagram of our simple FSM states in the game:
 
 When dealing with the Display Logic, there were two different ways this was addressed by our team:
 
-Once the full logic was implemented throughout the project, the game display looked like Figure 2, a simply solid color for where said sprite or object logic was happening. 
+Once the full logic was implemented throughout the project, the game display looked like Figure 2, a simple solid color for where said sprite or object logic was happening. This is the easiest way to visualize the game logic that is being implemented without adding additional levels of unnecessary concern in the moment. 
+
+![Image](https://github.com/user-attachments/assets/f4f21ea7-7768-421a-adef-542a9b908b41)
+
+                                  Figure 2. Full Logic Imeplementation with Grid Blocks 
+                  
+
+However, once you are at a good point in your project where all you have left to worry about is the display images themselves, you can address game display with Intel FPGA IP Cores, the one we did in this project. All Display logic happens in the vga_driver_memory.v file within this project, resulting in the final game image (Figure 3). 
 
 
 
+STEPS TO FOLLOW: 
+1. image 
 
 
 
