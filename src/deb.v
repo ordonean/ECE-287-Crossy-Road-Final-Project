@@ -1,7 +1,16 @@
-// Referenced: https://github.com/zarkobabic/PS2-keyboard-protocol-implementation-in-SystemVerilog/blob/master/src/synthesis/modules/deb.v
-// 12/10/2025
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+Referenced: https://github.com/zarkobabic/PS2-keyboard-protocol-implementation-in-SystemVerilog/blob/master/src/synthesis/modules/deb.v
+12/10/2025
 
-// Debounce module
+Debug helper module.
+This module tuens internal signals to LEDs or displays for testing.
+Note: It is not required for core game functionality.
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 module deb (input clk,
             input rst_n,
             input in,
@@ -29,4 +38,5 @@ module deb (input clk,
             cnt_next   = in_changed ? 0 : (cnt_reg + 1'b1);
             out_next   = in_stable ? ff_reg[1] : out_reg;
         end
+
 endmodule
