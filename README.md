@@ -55,7 +55,7 @@ Once the full logic was implemented throughout the project, the game display loo
 
 ![Image](https://github.com/user-attachments/assets/f4f21ea7-7768-421a-adef-542a9b908b41)
 
-                                  Figure 2. Full Logic Imeplementation with Grid Blocks 
+Figure 2. Full Logic Imeplementation with Grid Blocks 
                   
 
 However, once you are at a good point in your project where all you have left to worry about is the display images themselves, you can address game display with Intel FPGA IP Cores, the one we did in this project. All Display logic happens in the vga_driver_memory.v file within this project, resulting in the final game image (Figure 3). 
@@ -67,7 +67,7 @@ STEPS TO FOLLOW: as an example guide on how to do this method, the following wil
 1. Choose an Image to represent [sprite2] with online search. 
 2. Save as a .png image.
 3. Go to Claude by Anthropic and upload prompt "create a png to mif converter to upload mif files to quartus". (see Figure 4)
-
+<img width="2313" height="1073" alt="Image" src="https://github.com/user-attachments/assets/e249ac26-9167-4b38-b2b5-86f7579f3f65" /> 
 Figure 4. Prompting Claude by Anthropic to create a mif converter                 
 4. 
 
