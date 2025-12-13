@@ -1,3 +1,10 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+Safely interfaces the PS/2 keyboard with the system clock domain.
+This module captures serial PS/2 data and outputs scan codes with a synchronized ready pulse.
+It isolates PS/2 timing from the rest of the design.
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
 module ps2_wrapper (
     input        clk,
     input        rst_n,
@@ -29,3 +36,4 @@ module ps2_wrapper (
     end
 
 endmodule
+
