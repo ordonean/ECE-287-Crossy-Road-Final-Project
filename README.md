@@ -4,7 +4,7 @@ Within the README section you will be able to look through a rundown or each mod
 
 
 
-What Is Frogger? 
+                                               What Is Frogger? 
 
 Frogger is a classic arcade game where the player controls a frog trying to cross across 'dangerous' lanes of traffic to reach safe 'home' slots at the top of the screen. Some of the main core gamplay concepts are as follows: 
 
@@ -21,7 +21,7 @@ Frogger is a classic arcade game where the player controls a frog trying to cros
 
 
 
-Frogger Application in FPGA DE1-SoC Board: Crossy Road 
+                          Frogger Application in FPGA DE1-SoC Board: Crossy Road 
 
 For our final project, we have impleemnted a version of Frogger in the form of Crossy Road. This was done by considering a couple of things, specifically, the Finite State Machine used for this project. 
 
@@ -47,7 +47,7 @@ Here is our FSM diagram of our simple FSM states in the game:
 
 
 
-Display Logic & Instantiating a ROM IP Core via IP Catalog 
+                      Display Logic & Instantiating a ROM IP Core via IP Catalog 
 
 When dealing with the Display Logic, there were two different ways this was addressed by our team:
 
