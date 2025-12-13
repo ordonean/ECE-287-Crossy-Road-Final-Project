@@ -1,3 +1,13 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+Implements VGA timing logic including horizontal and vertical sync generation.
+This module produces pixel coordinates and visible-area signals used by the renderer.
+The visible pixels are (639,479), and the front porches are (799,524)
+It does not decide colors or game content.
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 module vga_driver(
     input clk,
     input rst,
@@ -64,5 +74,6 @@ always @(*) begin
     VGA_BLANK_N = active_pixels;
     VGA_SYNC_N = 1'b1;
 end
+
 
 endmodule
