@@ -2,7 +2,7 @@
 /*
 Generates VGA timing and the full game scene.
 Determines pixel color based on current screen coordinates and game state such as players, obstacles, and other elements.
-[ROM stuff...]
+ROM instantiations are found at bottom, and IP Core ROM logic found before game_display always block 
 Note: drawing priority means displaying the pixels/grid(s) first to be updated in the always block
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1496,4 +1496,5 @@ rom4isthatall isthatall_inst(.address(isthatall_car_address),
 
 */											
 endmodule
+
 
