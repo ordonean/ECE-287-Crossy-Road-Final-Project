@@ -55,14 +55,16 @@ Here is our FSM diagram of our simple FSM states in the game:
 
 When dealing with the Display Logic, there were two different ways this was addressed by our team:
 
-Once the full logic was implemented throughout the project, the game display looked like Figure 2, a simple solid color for where said sprite or object logic was currently present in. This is the easiest way to visualize the game logic that is being implemented without adding additional levels of unnecessary concern in the moment. AKA - think of figure 2 as steo 1 for having a proper game display. 
+Once the full logic was implemented throughout the project, the game display looked like Figure 2, a simple solid color for where said sprite or object logic was currently present in. 
+This is the easiest way to visualize the game logic that is being implemented without adding additional levels of unnecessary concern in the moment. AKA - think of figure 2 as steo 1 for having a proper game display. 
 
 ![Image](https://github.com/user-attachments/assets/f4f21ea7-7768-421a-adef-542a9b908b41)
 
 Figure 2. Full Logic Imeplementation with Grid Blocks 
                   
 
-However, once you are at a good point in your project where all you have left to worry about is the display images themselves, you can address game display with Intel FPGA IP Cores, the one we did in this project. All Display logic happens in the vga_driver_memory.v file within this project, resulting in the final game image (Figure 3). 
+However, once you are at a good point in your project where all you have left to worry about is the display images themselves, you can address game display with Intel FPGA IP Cores, the one we did in this project. 
+All Display logic happens in the vga_driver_memory.v file within this project, resulting in the final game image (Figure 3). 
 
 ![Image](https://github.com/user-attachments/assets/1e45e480-1f60-450e-9868-6f53b47a840f)
 
@@ -81,7 +83,12 @@ Figure 4. Prompting Claude by Anthropic to create a mif converter
 Figure 5. Selecting parameters within mif file converter 
 5. Upload all .mif files to a common repository within pre-established project folder.
          Ex: ECE287 -> final project -> crossy_road (top module folder) -> .mif files (mif files reside here!!)
-         Note: As a housekeeping item before advancing, ensure your mif files do not have foregin signage such as parenthesis. Quartus does not register this as known so whenever you compile it will shoot a warning. Ex: if your mif file = "sprite1(1).mif", change mif file name to "sprite1.mif". 
+         Note: As a housekeeping item before advancing, ensure your mif files do not have foregin signage such as parenthesis. Quartus does not register this as known so whenever you compile it will shoot a warning.
+             Ex: if your mif file = "sprite1(1).mif", change mif file name to "sprite1.mif".
+6. ROM cretation using Dr. Eric Schwartz's "Quartus ROM Creation Tutorial" up to page 3 out of 4
+         Note: Find this tutorial under the tools section fo the github; only follow up until page 3 out of 4, where last action is to "select yes".
+
+Figure 6. Last page to follow on tutorial 
 
 
 
