@@ -6,6 +6,9 @@ Wires together VGA output, PS2 keyboard input, game logic, obstacles, and debugg
 It manages global clock/reset, player state, and connects all submodules.
 It also implements our logic for movements, instead of having a separate movement module.
 
+Note: players can be controlled through 2 modes: keyboard ps/2 via VGA plug-in or KEYs on the FPGA. DE1-SoC board
+Refer to instrcution on how to switch between the 2 modes on around lines 507 - 566 of this code
+
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -501,7 +504,11 @@ module crossy_road(
         nextp2_x = player_2x;
         nextp2_y = player_2y;
 
-		  
+		  /////////////////////// Keyboard PS/2 to movement //////////////////////////////
+		// Please uncomment the "Keyboard PS/2 to movement" below to control players via keyboard PS/2 controller 
+		// such as WSAD, and arrow buttons via the FPGA, DE1-SoC board.
+		// And comment the "KEYs to movement" below.
+		
 		  if (select_p1) begin
 				 if (move_up_p1_cmd && player_y > 0)
 					  nextp1_y = player_y - 1;
@@ -523,25 +530,12 @@ module crossy_road(
 				 else if (move_right_p2_cmd && player_2x < 15)
 					  nextp2_x = player_2x + 1;
 			end
+		/////////////////////// end of - Keyboard PS/2 to movement //////////////////////////////
 		
+		// Please uncomment the "KEYs to movement" below to control players via KEY[3:0] via the FPGA, DE1-SoC board.
+		// And comment the "Keyboard PS/2 to movement" above.
 
-	/*		  // -------- Player 1 next position (WASD) --------
-		 if (player_tick) begin
-        if (select_p1) begin
-            if (p1_up_held   && player_y > 0)  nextp1_y = player_y - 1;
-            else if (p1_dn_held && player_y < 11) nextp1_y = player_y + 1;
-            else if (p1_lt_held && player_x > 0)  nextp1_x = player_x - 1;
-            else if (p1_rt_held && player_x < 15) nextp1_x = player_x + 1;
-        end
-
-        if (select_p2) begin
-            if (p2_up_held   && player_2y > 0)  nextp2_y = player_2y - 1;
-            else if (p2_dn_held && player_2y < 11) nextp2_y = player_2y + 1;
-            else if (p2_lt_held && player_2x > 0)  nextp2_x = player_2x - 1;
-            else if (p2_rt_held && player_2x < 15) nextp2_x = player_2x + 1;
-        end
-    end
-		 */
+		///////////////////// KEYs to movement //////////////////////////////
 		 /*
 		 if (select_p1) begin
 			  if (KEY[2] == 1'b0 && player_y > 0)
@@ -569,6 +563,7 @@ module crossy_road(
 					nextp2_x = player_2x + 1;         // RIGHT
 		 end
 		 */
+		///////////////////// end of - KEYs to movement //////////////////////////////
 		 
     end
 
@@ -749,7 +744,7 @@ module crossy_road(
 
     ////////////////////////////  DEBUG LED ASSIGNMENTS  ////////////////////////////////////////
 	
-
+/*
 			 // Visible version of scan_ready (toggle on each new code)
 		assign LEDR[0] = move_up_p1;
 		assign LEDR[1] = move_down_p1;
@@ -763,7 +758,7 @@ module crossy_road(
 
 		assign LEDR[8] = scan_ready;   // or scan_ready_vis from core
 		assign LEDR[9] = 1'b0;
-
+*/
 	
 	
 
@@ -1041,4 +1036,5 @@ keyboard_decoder kb (
 
 
 endmodule
+
 
