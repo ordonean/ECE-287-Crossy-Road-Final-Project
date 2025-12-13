@@ -74,7 +74,11 @@ STEPS TO FOLLOW: as an example guide on how to do this method, the following wil
 3. Go to Claude by Anthropic and upload prompt "create a png to mif converter to upload mif files to quartus". (see Figure 4)
 <img width="2313" height="1073" alt="Image" src="https://github.com/user-attachments/assets/e249ac26-9167-4b38-b2b5-86f7579f3f65" /> 
 Figure 4. Prompting Claude by Anthropic to create a mif converter                 
-4. 
+4. Set paratemeters for creating mif file from converter.
+    Note: This means knowing how big (bit wise) your color output is. In this project, we used a 24 bit output, so 24-bit color depth was selected.
+    Note: You must know your pixel range. Ex: If Sprite is represented by 1 grid square at a time and each grid = 40 x 40 pixels, select correct choice. Else, change to applicable sizing 
+
+Figure 5. Selecting parameters within mif file converter 
 
 
 
