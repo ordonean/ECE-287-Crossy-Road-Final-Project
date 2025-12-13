@@ -77,7 +77,7 @@ Figure 4. Prompting Claude by Anthropic to create a mif converter
 4. Set paratemeters for creating mif file from converter.
     Note: This means knowing how big (bit wise) your color output is. In this project, we used a 24 bit output, so 24-bit color depth was selected.
     Note: You must know your pixel range. Ex: If Sprite is represented by 1 grid square at a time and each grid = 40 x 40 pixels, select correct choice. Else, change to applicable sizing 
-
+<img width="1096" height="377" alt="Image" src="https://github.com/user-attachments/assets/fe25d004-01f3-4e87-a739-8537d9e23a2a" /> 
 Figure 5. Selecting parameters within mif file converter 
 
 
