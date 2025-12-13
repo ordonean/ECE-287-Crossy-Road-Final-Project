@@ -1,7 +1,15 @@
-// Referenced: https://github.com/zarkobabic/PS2-keyboard-protocol-implementation-in-SystemVerilog/blob/master/src/synthesis/modules/ps2.v
-// 12/10/2025
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+ Referenced: https://github.com/zarkobabic/PS2-keyboard-protocol-implementation-in-SystemVerilog/blob/master/src/synthesis/modules/ps2.v
+ 12/10/2025
 
-// Keyboard module
+Low-level PS/2 protocol handler.
+This module reads raw PS/2 clock and data signals and reconstructs scan code bytes.
+It is intended to be used only through the ps2_wrapper.
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 module ps2 (input PS2_KBCLK,
             input PS2_KBDAT,
             input rst_n,
@@ -124,4 +132,5 @@ module ps2 (input PS2_KBCLK,
     
     
     
+
 endmodule
