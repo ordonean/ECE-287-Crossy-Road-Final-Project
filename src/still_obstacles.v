@@ -1,6 +1,12 @@
-// This module is for all still objects / obstacles (i.e. train tracks, streets, trees, railroad crossing end posts, etc) 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+This module is for all still objects / obstacles (i.e. train tracks, streets, trees, railroad crossing end posts, etc) 
+Defines static obstacles and non-moving map elements.
+This module provides fixed obstacle locations used for collision checks and rendering, and using parameterized grid 
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// parameterized grid 
+
 module still_obstacles #(
 									parameter GRID_WIDTH = 16,			// 16 columns 
 									parameter GRID_HEIGHT = 12)		// 12 rows 
@@ -302,4 +308,5 @@ endmodule
 					
 									
 									
+
 									
