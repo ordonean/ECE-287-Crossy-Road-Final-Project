@@ -158,8 +158,7 @@ module vga_driver_memory (
 		within_heart_011_delayed <= within_heart_011; 
 	end 
 	
-	wire heart_011_transparent = ((heart_011_color[23:16] < 8'h10) && (heart_011_color[15:8] < 8'h10) && (heart_011_color[7:0] < 8'h10) || 
-									(heart_011_color[23:16] < 8'h10) && (heart_011_color[15:8] < 8'h10) && (heart_011_color[7:0] < 8'h10) );  
+	wire heart_011_transparent = ((heart_011_color[23:16] < 8'h10) && (heart_011_color[15:8] < 8'h10) && (heart_011_color[7:0] < 8'h10) );  
 	wire show_heart_011 = within_heart_011_delayed && !heart_011_transparent; 
 	
 	
@@ -203,8 +202,7 @@ module vga_driver_memory (
 		within_heart_1411_delayed <= within_heart_1411; 
 	end 
 	
-	wire heart_1411_transparent = ((heart_1411_color[23:16] < 8'h10) && (heart_1411_color[15:8] < 8'h10) && (heart_1411_color[7:0] < 8'h10) || 
-									(heart_1411_color[23:16] < 8'h10) && (heart_1411_color[15:8] < 8'h10) && (heart_1411_color[7:0] < 8'h10) );  
+	wire heart_1411_transparent = ((heart_1411_color[23:16] < 8'h10) && (heart_1411_color[15:8] < 8'h10) && (heart_1411_color[7:0] < 8'h10) );  
 	wire show_heart_1411 = within_heart_1411_delayed && !heart_1411_transparent; 
 	 
 	 
@@ -253,19 +251,21 @@ module vga_driver_memory (
 	
 	
 	// sprite 2 
-	wire [23:0] sprite2_color; 											// 24 bits because ROM will output 12 bits 
+	wire [23:0] sprite2_color; 											
 	wire [5:0] sprite2_x = xPixel_internal - player_2x_px; 					// relative x position: current Horizontal pixel - sprite's horizontal position... 6 bits holds all 40 pixels 
 	wire [5:0] sprite2_y = yPixel_internal - player_2y_px; 					// relative y position: current Vertical pixel - sprite's vertical position ... 6 bits holds all 40 pixels 
 	//based on ROM adress formula:   adress = (row * width) + column 
 	wire [10:0] sprite2_address = (sprite2_y * TILE) + sprite2_x; 			// 11 bits to fit 1600 pixels 
 
 	// checking if within sprite bounds 
-	wire within_sprite2 = (xPixel_internal >= player_2x_px) && (xPixel_internal < player_2x_px + 6'd40) && (yPixel_internal >= player_2y_px) && (yPixel_internal < player_2y_px + 6'd40); 
+	wire within_sprite2 = (xPixel_internal >= player_2x_px) && (xPixel_internal < player_2x_px + 6'd40) && 
+	                      (yPixel_internal >= player_2y_px) && (yPixel_internal < player_2y_px + 6'd40); 
 	reg within_sprite2_delayed; 
+	
 	// transparent background 
-	wire sprite2_transparent = ((sprite2_color[23:16] < 8'h10) && (sprite2_color[15:8] < 8'h10) && (sprite2_color[7:0] < 8'h10) || // black background 
-									(sprite2_color[23:16] < 8'h10) && (sprite2_color[15:8] < 8'h10) && (sprite2_color[7:0] < 8'h10) );  // white background 
+	wire sprite2_transparent = ((sprite2_color[23:16] < 8'h10) && (sprite2_color[15:8] < 8'h10) && (sprite2_color[7:0] < 8'h10));   
 	wire show_sprite2 = within_sprite2_delayed && !sprite2_transparent; 
+	
 	// accounting for memory reading clk delay 
 	always @ (posedge vga_pix_clk) begin 
 		within_sprite2_delayed <= within_sprite2; 
@@ -1496,5 +1496,6 @@ rom4isthatall isthatall_inst(.address(isthatall_car_address),
 
 */											
 endmodule
+
 
 
