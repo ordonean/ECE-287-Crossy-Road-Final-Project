@@ -258,8 +258,8 @@ module vga_driver_memory (
 	wire [10:0] sprite2_address = (sprite2_y * TILE) + sprite2_x; 			// 11 bits to fit 1600 pixels 
 
 	// checking if within sprite bounds 
-	wire within_sprite2 = (xPixel_internal >= player_2x_px) && (xPixel_internal < player_2x_px + 6'd40) && 
-	                      (yPixel_internal >= player_2y_px) && (yPixel_internal < player_2y_px + 6'd40); 
+	wire within_sprite2 = (xPixel_internal >= player_2x_px) && (xPixel_internal < player_2x_px + TILE) && 
+	(yPixel_internal >= player_2y_px) && (yPixel_internal < player_2y_px + TILE); 
 	reg within_sprite2_delayed; 
 	
 	// transparent background 
@@ -281,7 +281,7 @@ module vga_driver_memory (
 	 
 	wire [23:0] allnight_car_color; 											
 	wire [11:0] allnight_car_offset_x = xPixel_internal - allnight_carx_px; 			// changed to 12 bits for multi-block length (32000 pxs)		
-	wire [11:0] allnight_car_offset_y = yPixel_internal - allnight_cary_px; 			// changed to 12 bits for multi-block length  (3200 pxs)
+	wire [11:0] allnight_car_offset_y = yPixel_internal - allnight_cary_px; 			// changed to 12 bits for multi-block length (32000 pxs)
 	//based on ROM adress formula....   width: account for multiple grid blocks wide 
 	wire [12:0] allnight_car_address = (allnight_car_offset_y * (CAR_LENGTH_CONST * TILE)) + allnight_car_offset_x; 	// 13 bits to fit 4800 pixels			
 
@@ -511,23 +511,25 @@ module vga_driver_memory (
 	
 ////////////////////////////////////////// ROM MODULE INSTATIATION FOR TRAIN  //////////////////////////////////////////////////////////////////////////////////	 
     wire [9:0] train_006_x = train_head_x; 
-	 wire [9:0] train_006_y = train_row;
-	 wire [9:0] train_006x_px  = train_006_x  * TILE; 
+	wire [9:0] train_006_y = train_row;
+	wire [9:0] train_006x_px  = train_006_x  * TILE; 
     wire [9:0] train_006y_px  = train_006_y  * TILE; 
 	 
 	// Moving train
 	wire [23:0] train_006_color; 											
-	wire [9:0] train_006_offset_x = xPixel_internal - train_006x_px; 			// changed to 10 bits for multi-block length				
-	wire [9:0] train_006_offset_y = yPixel_internal - train_006y_px; 			// changed to 10 bits for multi-block length		
+	wire [9:0] train_006_offset_x = xPixel_internal - train_006x_px; 			      // changed to 10 bits for multi-block length				
+	wire [9:0] train_006_offset_y = yPixel_internal - train_006y_px; 			      // changed to 10 bits for multi-block length		
 	wire [12:0] train_006_address = (train_006_offset_y * (TRAIN_LENGTH * TILE)) + train_006_offset_x; 	// 13 bits to fit 4800 pixels			
 
 	// checking if within sprite bounds 
 	wire within_train_006 = (xPixel_internal >= train_006x_px) && (xPixel_internal < train_006x_px + (TRAIN_LENGTH * TILE)) && 
 									(yPixel_internal >= train_006y_px) && (yPixel_internal < train_006y_px + TILE); 
 	reg within_train_006_delayed; 
+	
 	// transparent background 
 	wire train_006_transparent = ((train_006_color[23:16] < 8'h10) && (train_006_color[15:8] < 8'h10) && (train_006_color[7:0] < 8'h10));  
 	wire show_train_006 = within_train_006_delayed && !train_006_transparent; 
+	
 	// accounting for memory reading clk delay 
 	always @ (posedge vga_pix_clk) begin 
 		within_train_006_delayed <= within_train_006; 
@@ -1496,6 +1498,7 @@ rom4isthatall isthatall_inst(.address(isthatall_car_address),
 
 */											
 endmodule
+
 
 
 
