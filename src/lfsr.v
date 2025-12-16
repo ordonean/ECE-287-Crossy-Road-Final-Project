@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Implements a linear feedback shift register for pseudo-random generation.
-This module is used to introduce randomness into obstacle behavior that we use with the cars in the top module
+This module is used to introduce 'randomness' into obstacle behavior that we use with the cars in the top module
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -21,3 +21,4 @@ module lfsr(
     end
 
 endmodule
+
